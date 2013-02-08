@@ -1,1 +1,4 @@
-var Todo;
+var Todo = Backbone.Model.extend({});
+
+
+
