@@ -3,4 +3,5 @@ describe ("A Todo model to create individual todo items", function(){
 		
 		expect(Todo).toBe(Backbone.Model.extend({}));
 	});
+	
 });
