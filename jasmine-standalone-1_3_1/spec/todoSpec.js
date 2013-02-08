@@ -12,8 +12,13 @@ describe ("A Todo model (to create individual todo list items)", function(){
 		}
 		);
 		expect(todoitem.get("caption")).toBeDefined();
-		
-	
+	});
+	it("should have a checkbox to show it it is done. ", function(){ 
+		var todoitem = new Todo({
+			completed: "Todo item"
+		}
+		);
+		expect(todoitem.get("completed")).toBeDefined();
 	});
 	
 });
