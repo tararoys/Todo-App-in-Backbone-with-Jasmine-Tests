@@ -1,1 +1,1 @@
-var Todo = 1;
+var Todo;
