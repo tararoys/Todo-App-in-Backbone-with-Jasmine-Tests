@@ -15,10 +15,18 @@ describe ("A Todo model (to create individual todo list items)", function(){
 	});
 	it("should have a checkbox to show it it is done. ", function(){ 
 		var todoitem = new Todo({
-			completed: "Todo item"
+			completed: false
 		}
 		);
 		expect(todoitem.get("completed")).toBeDefined();
 	});
+	it("should have the empty string as the default caption ", function(){
+		var todoitem = new Todo();
+		expect(todoitem.get('caption')).toBe('');
+	 });
+	 it("should have false as the default value for completed ", function(){ 
+	 	var todoitem = new Todo();
+	 	expect(todoitem.get("completed")).toBe(false);
+	 });
 	
 });
