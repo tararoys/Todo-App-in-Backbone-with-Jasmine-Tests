@@ -10,4 +10,9 @@ describe ("A todo list (Aka a collection of todo items)", function(){
 		expect(todo_list1.model).toBe(Todo);
 	
 	});
+	it("should store models in localstorage for ", function(){
+		var todo_list1 = new TodoList();
+		expect(todo_list1.localStorage).toBeDefined();
+	
+	 });
 });

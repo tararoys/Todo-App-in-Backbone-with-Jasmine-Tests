@@ -10,4 +10,9 @@ describe ("An Application that stores todo lists", function(){
 	 it("Should have loaded underscore ", function(){ 
 	 	expect(Backbone.Model.extend({})).toBeDefined();
 	 });
+	 it("should have loaded Backbone.localStorage ", function(){ 
+	 	var store = new Backbone.LocalStorage('mystore');
+	 	expect(store).toBeDefined();
+	 
+	 });
 });
