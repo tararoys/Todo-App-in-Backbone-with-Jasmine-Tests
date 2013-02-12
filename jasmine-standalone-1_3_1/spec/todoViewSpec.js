@@ -18,13 +18,21 @@ describe ("A todo item view", function(){
 	 	expect(todo_view.el).toBeDefined();;
 	 
 	 });
-	 it("should have the Render function output some html containing the caption and a checkmark box showing the completed status ", function(){ 
-	 	var my_model = new Todo();
+	 it("should have the Render function output some html into thr view's el property", function(){ 
+	 	var my_model = new Todo({caption:"test model rendering"});
 	 	var todo_view = new TodoView({model:my_model});
 	 	todo_view.render();
-	 	expect(todo_view.$el.html()).toBe("random test string");
+	 	expect(todo_view.$el.html()).toBe("test model rendering");
 	 	
 	 });
+	 it("Should be able to generate a checkbox thst is checked if Todo property completed is true ", function(){
+	 	var my_model = new Todo({caption:"checkbox is checked",
+	 		completed:true});
+	 	var todo_view = new TodoView({model:my_model});
+	 	todo_view.render();
+	 	expect(todo_view.$el.html()).toBe('<input checked="checked">checkbox is checked');
+	 
+	  });
 	
 	
 });
