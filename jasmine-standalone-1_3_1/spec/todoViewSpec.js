@@ -22,16 +22,24 @@ describe ("A todo item view", function(){
 	 	var my_model = new Todo({caption:"test model rendering"});
 	 	var todo_view = new TodoView({model:my_model});
 	 	todo_view.render();
-	 	expect(todo_view.$el.html()).toBe("test model rendering");
+	 	expect(todo_view.$el.html()).toBe('<input type="checkbox">test model rendering');
 	 	
 	 });
-	 it("Should be able to generate a checkbox thst is checked if Todo property completed is true ", function(){
+	 it("Should be able to generate a checkbox thst is checked if Todo property completed is true", function(){
 	 	var my_model = new Todo({caption:"checkbox is checked",
 	 		completed:true});
 	 	var todo_view = new TodoView({model:my_model});
 	 	todo_view.render();
-	 	expect(todo_view.$el.html()).toBe('<input checked="checked">checkbox is checked');
+	 	expect(todo_view.$el.html()).toBe('<input type="checkbox" checked="checked">checkbox is checked');
 	 
+	  });
+	  it("Should be able to generate a checkbox that is not checked if todo property complete is false ", function(){ 
+	  	var my_model = new Todo({caption:"checkbox is checked",
+	 		completed:false});
+	 	var todo_view = new TodoView({model:my_model});
+	 	todo_view.render();
+	 	expect(todo_view.$el.html()).toBe('<input type="checkbox">checkbox is checked');
+	  	
 	  });
 	
 	
