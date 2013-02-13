@@ -34,11 +34,11 @@ describe ("A todo item view", function(){
 	 
 	  });
 	  it("Should be able to generate a checkbox that is not checked if todo property complete is false ", function(){ 
-	  	var my_model = new Todo({caption:"checkbox is checked",
+	  	var my_model = new Todo({caption:"checkbox is not checked",
 	 		completed:false});
 	 	var todo_view = new TodoView({model:my_model});
 	 	todo_view.render();
-	 	expect(todo_view.$el.html()).toBe('<input type="checkbox">checkbox is checked');
+	 	expect(todo_view.$el.html()).toBe('<input type="checkbox">checkbox is not checked');
 	  	
 	  });
 	

@@ -39,6 +39,5 @@ describe ("A todo list (Aka a collection of todo items)", function(){
 	 	expect(todo_list1.get(1)).not.toBeDefined();
 	 
 	  });
-	  
 	 
 });
