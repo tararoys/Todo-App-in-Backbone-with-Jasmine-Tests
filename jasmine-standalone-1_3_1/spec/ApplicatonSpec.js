@@ -15,4 +15,7 @@ describe ("An Application that stores todo lists", function(){
 	 	expect(store).toBeDefined();
 	 
 	 });
+	 it("should have loaded jquery ", function(){ 
+	 	expect($).toBeDefined();
+	 });
 });
