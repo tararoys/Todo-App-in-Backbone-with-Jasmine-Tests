@@ -74,7 +74,7 @@ describe ("A todo item view", function(){
 	  		todo_view.$('input').change(); 
 	  		expect(my_model.get('completed')).toBe(true);
 	  		
-	  		//expect(todo_view.$el.html()).toBe('<input type="checkbox" checked="checked">checkbox is not checked');
+	  		expect(todo_view.$('input')).toBeChecked();
 	     });
 	
 	
