@@ -18,4 +18,8 @@ describe ("An Application that stores todo lists", function(){
 	 it("should have loaded jquery ", function(){ 
 	 	expect($).toBeDefined();
 	 });
+	 it("should have loaded jasmine-jquery ", function(){
+	 	expect($('<div id="some-id"></div>')).toBe('div#some-id');
+	 
+	  });
 });
