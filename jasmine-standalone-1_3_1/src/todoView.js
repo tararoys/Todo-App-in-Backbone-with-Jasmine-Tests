@@ -1,7 +1,9 @@
 var TodoView = Backbone.View.extend({
-
+	initialize: function(){
+		this.render();
+	},
 	events: {
-		"click" : "helloWorld"
+	
 	},
 	render : function() {
 		if(this.model.get("completed")===true){
@@ -11,9 +13,6 @@ var TodoView = Backbone.View.extend({
 			this.$el.html('<input type="checkbox">' + this.model.get("caption"));
 		}
 	},
-	helloWorld: function(){
-		alert("hello world");
-		}
 	
 
 });
