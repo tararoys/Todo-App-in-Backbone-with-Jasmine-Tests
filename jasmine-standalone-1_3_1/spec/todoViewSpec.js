@@ -67,6 +67,18 @@ describe ("A todo item view", function(){
 	  		expect(todo_view.$el.html()).toBe('<input type="checkbox" checked="checked">checkbox is not checked');
 	    
 	     });
+	     it("should have a click event that calls toggleHeckbox ", function(){ 
+	     	var my_model= new Todo({caption:"checkbox is not checked",
+	 		completed:false});
+	  		var todo_view = new TodoView({model:my_model});
+	  		var checkbox= todo_view.$el;
+	  		checkbox.trigger('click');
+	
+	  		
+	  		expect(my_model.get('completed')).toBe(true);
+	  		expect(todo_view.$el.html()).toBe('<input type="checkbox" checked="checked">checkbox is not checked');
+	     
+	     });
 	
 	
 });

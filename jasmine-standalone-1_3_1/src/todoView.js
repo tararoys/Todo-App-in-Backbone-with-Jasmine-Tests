@@ -3,7 +3,7 @@ var TodoView = Backbone.View.extend({
 		this.render();
 	},
 	events: {
-		
+		"click": "toggleCheckbox"
 	},
 	render : function() {
 		if(this.model.get("completed")===true){
