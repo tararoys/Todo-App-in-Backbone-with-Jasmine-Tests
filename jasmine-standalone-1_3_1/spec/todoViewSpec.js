@@ -41,6 +41,28 @@ describe ("A todo item view", function(){
 	 	expect(todo_view.$el.html()).toBe('<input type="checkbox">checkbox is not checked');
 	  	
 	  });
+	  it("should have events defined ", function(){ 
+	  	var todo_view = new TodoView();
+	  	expect(todo_view.events).toBeDefined();
+	  
+	  });
+	  it("should have el initialized ", function(){
+	  	var todo_view = new TodoView();
+	  	expect(todo_view.$el.html()).toBe('hello');
+	   });
+	  it("Add an event listener to checkbox in todo view", function(){
+	  	var my_model = new Todo({caption:"checkbox is not checked",
+	 		completed:false});
+	 	var todo_view = new TodoView({model:my_model});
+	 	todo_view.render();
+	 	todo_view.click();
+	 	
+	 	//select the checkbox
+	 	//trigger a click event
+	 	//see if the click event triggered
+	 	expect().toBeTruthy();
+	  
+	   });
 	
 	
 });
