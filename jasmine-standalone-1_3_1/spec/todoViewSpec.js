@@ -26,11 +26,11 @@ describe ("A todo item view", function(){
 	 	expect(todo_view.el).toBeDefined();;
 	 
 	 });
-	 xit("should have the Render function output some html into thr view's el property", function(){ 
+	 it("should have the Render function output some html into thr view's el property", function(){ 
 	 	my_model = new Todo({caption:"test model rendering"});
 	 	todo_view = new TodoView({model:my_model});
 	 	todo_view.render();
-	 	expect(todo_view.$el.html()).toBe('<input type="checkbox">test model rendering');
+	 	expect(todo_view.$el.html()).not.toBeEmpty();
 	 	
 	 });
 	 it("Should be able to generate a checkbox thst is checked if Todo property completed is true", function(){
@@ -40,12 +40,12 @@ describe ("A todo item view", function(){
 	 	expect(todo_view.$('input')).toBeChecked();
 	 
 	  });
-	  xit("Should be able to generate a checkbox that is not checked if todo property complete is false ", function(){ 
+	  it("Should be able to generate a checkbox that is not checked if todo property complete is false ", function(){ 
 	  	var my_model = new Todo({caption:"checkbox is not checked",
 	 		completed:false});
 	 	var todo_view = new TodoView({model:my_model});
 	 	todo_view.render();
-	 	expect(todo_view.$el.html()).toBe('<input type="checkbox">checkbox is not checked');
+	 	expect(todo_view.$('input')).not.toBeChecked();
 	  	
 	  });
 	  
@@ -58,12 +58,12 @@ describe ("A todo item view", function(){
 	  		expect(todo_view.events).toBeDefined();
 	   
 	    });
-	    xit("Should have a function to toggle model's completed attribute ", function(){
+	    it("Should have a function to toggle model's completed attribute ", function(){
 	    	
 	  		todo_view.toggleCheckbox();
 	  		expect(my_model.get('completed')).toBe(true);
 	  		
-	  		expect(todo_view.$el.html()).toBe('<input type="checkbox" checked="checked">checkbox is not checked');
+	  		expect(todo_view.$('input')).toBeChecked();
 	    
 	     });
 	    it("should have a click event that calls toggleCheckbox ", function(){ 
