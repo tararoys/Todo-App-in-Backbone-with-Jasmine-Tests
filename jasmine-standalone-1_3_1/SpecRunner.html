@@ -16,6 +16,17 @@
   <script type="text/javascript" src="lib/jasmine-jquery.js"></script>
   
   <!--more source files-->
+    <!-- index.html -->
+
+  <script type="text/template" id="item-template">
+    <div class="view">
+      <input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
+      <label><%= caption %></label>
+      <button class="destroy"></button>
+    </div>
+  </script>
+
+
   <script type="text/javascript" src="src/lib/underscore.js"></script>
   <script type="text/javascript" src="src/lib/backbone.js"></script>
   <script type="text/javascript" src="src/lib/backbone.localStorage.js"></script>
