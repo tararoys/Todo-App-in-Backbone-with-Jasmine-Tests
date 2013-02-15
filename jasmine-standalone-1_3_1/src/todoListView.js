@@ -1,6 +1,8 @@
 var TodoListView = Backbone.View.extend({
 initialize: function(){
+	//_.bindAll(this);
 	this.render();
+	this.collection.on('add', this.render, this);
 },
 events:{
 	"keypress #addtodo":"addTodo"
@@ -20,7 +22,7 @@ addTodo:function(e){
 	}
 	var new_todo = new Todo({caption:this.$('#addtodo').val(), completed:false})
 	this.collection.add(new_todo);
-	this.render();
+	//this.render();
 }
 
 });
