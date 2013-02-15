@@ -10,9 +10,16 @@ describe ("Todo List View", function(){
 		//create todo list view
 		var todo_list_view = new TodoListView({collection: todo_list});
 		todo_list_view.render();
-		expect(todo_list_view.$el.html()).toBe('<div> <input type="checkbox"> <label>create new todo</label> </div><div> <input type="checkbox" checked=""> <label>see if Todo List</label> </div>');
+		expect(todo_list_view.el.innerHTML).toContain('create new todo');
+		
+		//'<div> <input type="checkbox"> <label>create new todo</label> </div><div> <input type="checkbox" checked=""> <label>see if Todo List</label> </div>');
 		//render todo list
 		
 	
+	 });
+	 it("Should have a place to add todos", function(){ 
+	 var todo_list = new TodoList();
+	 var todo_list_view = new TodoListView({collection:todo_list});
+	 	expect(todo_list_view.$('#addtodo')).toBeDefined();
 	 });
 });
