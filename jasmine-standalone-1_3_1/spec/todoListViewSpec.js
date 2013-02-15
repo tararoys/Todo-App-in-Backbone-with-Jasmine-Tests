@@ -1,6 +1,6 @@
 describe ("Todo List View", function(){
-	xit("shows all todos in a list ", function(){
-		//create two todos
+	it("shows all todos in a list ", function(){
+	//create two todos
 		var todo1 = new Todo({caption: "create new todo", completed:false});
 		var todo2 = new Todo({caption: "see if Todo List", completed:true});
 		//create todo list

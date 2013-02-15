@@ -14,6 +14,7 @@ var TodoView = Backbone.View.extend({
 		else{
 			this.$el.html('<input type="checkbox">' + this.model.get("caption"));
 		}
+		return this;
 	},
 	toggleCheckbox: function(){
 		if(this.model.get('completed')===false){

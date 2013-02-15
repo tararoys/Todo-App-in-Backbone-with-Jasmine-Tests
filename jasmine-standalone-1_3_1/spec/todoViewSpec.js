@@ -76,6 +76,10 @@ describe ("A todo item view", function(){
 	  		
 	  		expect(todo_view.$('input')).toBeChecked();
 	     });
+	     it("Should, by convention, return the view when the render functin is called ", function(){ 
+	 			expect(todo_view.render()).toBe(todo_view);
+	 
+	 	});
 	
 	
 });
