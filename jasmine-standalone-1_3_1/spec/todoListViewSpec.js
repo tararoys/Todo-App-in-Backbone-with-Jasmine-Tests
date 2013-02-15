@@ -27,10 +27,17 @@ describe ("Todo List View", function(){
 	 	expect(todo_list_view.$('#addtodo')).toBeDefined();
 	 	
 	 });
-	 it("Should be able to add todos to todo list ", function(){ 
+	 it("Should have a function to add new todos to todo list ", function(){ 
 	 	todo_list_view.$('#addtodo').val('create new todo list item');
 	 	todo_list_view.addTodo()
 	 	expect(todo_list.at(0)).toBeDefined()
 	 	
 	 });
+	 it("should create a new todo when you hit enter in the new todo inout box", function(){
+	 	todo_list_view.$('#addtodo').val('create new todo list item');
+	 	todo_list_view.$('#addtodo').keypress();
+	 	expect(todo_list.at(0)).toBeDefined()
+	 	
+	 
+	  });
 });
