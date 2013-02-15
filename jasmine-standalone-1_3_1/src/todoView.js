@@ -7,13 +7,17 @@ var TodoView = Backbone.View.extend({
 		"change input": "toggleCheckbox"
 	},
 	render : function() {
-		//this.$el.html('<p><input type="checkbox">' + this.model.get("caption") + " completed: " + this.model.get("completed") + "</p>");
+	
+		var todo_content = "";
+		
 		if(this.model.get("completed")===true){
-			this.$el.html("<input type='checkbox' checked='checked'>" + this.model.get("caption"));
+			todo_content="<input type='checkbox' checked='checked'>" + this.model.get("caption");
 			}
 		else{
-			this.$el.html('<input type="checkbox">' + this.model.get("caption"));
+			todo_content='<input type="checkbox">' + this.model.get("caption");
 		}
+		
+		this.$el.html(todo_content);
 		return this;
 	},
 	toggleCheckbox: function(){

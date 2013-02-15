@@ -30,18 +30,17 @@ describe ("A Todo model (to create individual todo list items)", function(){
 	 });
 	 it("Should be able to change the value of completed from false to true ", function(){ 
 	 		var todoitem = new Todo();
-	 		todoitem.set("completed", #true);
+	 		todoitem.set("completed", true);
 	 		expect(todoitem.get("completed")).toBe(true);
 	 });
-	 it("Should be able to change the value of completed from true to false ", function(){ 
+	it("Should be able to change the value of completed from true to false ", function(){ 
 	 		var todoitem = new Todo({
 	 			caption: "This is completed",
 	 			completed: true
 	 		});
 	 		todoitem.set("completed", false);
 	 		expect(todoitem.get("completed")).toBe(false);
-	 
+	 		
 	 });
-	 
 	
 });
