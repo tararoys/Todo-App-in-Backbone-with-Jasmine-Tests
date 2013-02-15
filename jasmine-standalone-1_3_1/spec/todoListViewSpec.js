@@ -10,7 +10,7 @@ describe ("Todo List View", function(){
 		//create todo list view
 		var todo_list_view = new TodoListView({collection: todo_list});
 		todo_list_view.render();
-		expect(todo_list_view.$el.html()).toBe('<div><input type="checkbox">create new todo</div><div><input type="checkbox" checked="checked">see if Todo List</div>');
+		expect(todo_list_view.$el.html()).toBe('<div> <input type="checkbox"> <label>create new todo</label> </div><div> <input type="checkbox" checked=""> <label>see if Todo List</label> </div>');
 		//render todo list
 		
 	

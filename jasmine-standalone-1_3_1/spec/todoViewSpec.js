@@ -68,9 +68,6 @@ describe ("A todo item view", function(){
 	     });
 	    it("should have a click event that calls toggleCheckbox ", function(){ 
 	     	
-	  		//todo_view.$('p').click();
-	  		
-	  		//expect(my_model.get('completed')).toBe(true);
 	  		todo_view.$('input').change(); 
 	  		expect(my_model.get('completed')).toBe(true);
 	  		
