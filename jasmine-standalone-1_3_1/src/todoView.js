@@ -2,6 +2,8 @@ var TodoView = Backbone.View.extend({
 
 	initialize: function(){
 		this.render();
+		this.model.on('change', this.render, this);
+		
 	},
 	events: {
 		"change input": "toggleCheckbox"
@@ -21,7 +23,7 @@ var TodoView = Backbone.View.extend({
 		else{
 			this.model.set('completed', false);
 		}
-		this.render();
+		//this.render();
 	}
 	
 
