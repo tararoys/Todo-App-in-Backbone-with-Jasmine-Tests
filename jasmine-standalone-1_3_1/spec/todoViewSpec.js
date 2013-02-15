@@ -81,8 +81,8 @@ describe ("A todo item view", function(){
 	 
 	 	});
 	 	it("should have a template function that takes in model data and outputs the appropriate html. ", function(){ 
-	 		expect(todo_view.todotmpl).toBeDefined();
-	 		expect(todo_view.$el.html()).toBe('<input type="checkbox">checkbox is not checked');
+	 		expect(todo_view.template).toBeDefined();
+	 		expect(todo_view.$el.html()).not.toBeEmpty();
 	 	});
 	
 	
