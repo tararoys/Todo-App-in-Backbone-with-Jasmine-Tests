@@ -6,6 +6,7 @@ var TodoView = Backbone.View.extend({
 	events: {
 		"change input": "toggleCheckbox"
 	},
+	todotmpl: function(){},
 	render : function() {
 	
 		var todo_content = "";

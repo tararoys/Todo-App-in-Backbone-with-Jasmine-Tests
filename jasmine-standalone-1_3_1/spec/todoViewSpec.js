@@ -80,6 +80,9 @@ describe ("A todo item view", function(){
 	 			expect(todo_view.render()).toBe(todo_view);
 	 
 	 	});
+	 	it("should have a template function that takes in model data and outputs the appropriate html. ", function(){ 
+	 		expect(todo_view.todotmpl).toBeDefined();
+	 	});
 	
 	
 });
