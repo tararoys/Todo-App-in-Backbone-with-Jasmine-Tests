@@ -9,6 +9,10 @@ render: function(){
 	  	todo_view.render();
 	  		this.$el.append(todo_view.$el);
 	  	}, this);
-	}
+	},
+addTodo:function(){
+	var new_todo = new Todo({caption:this.$('addtodo').val(), completed:false})
+	this.collection.add(new_todo);
+}
 
 });
