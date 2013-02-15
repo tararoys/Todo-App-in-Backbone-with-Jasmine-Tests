@@ -6,18 +6,19 @@ var TodoView = Backbone.View.extend({
 	events: {
 		"change input": "toggleCheckbox"
 	},
-	todotmpl: function(){},
-	render : function() {
-	
-		var todo_content = "";
-		
+	todotmpl: function(){
+		var todo_content='';
 		if(this.model.get("completed")===true){
 			todo_content="<input type='checkbox' checked='checked'>" + this.model.get("caption");
 			}
 		else{
 			todo_content='<input type="checkbox">' + this.model.get("caption");
 		}
-		
+		return todo_content;
+	},
+	render : function() {
+	
+		var todo_content = this.todotmpl();
 		this.$el.html(todo_content);
 		return this;
 	},
