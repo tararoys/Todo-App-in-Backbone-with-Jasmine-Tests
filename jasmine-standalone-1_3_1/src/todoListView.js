@@ -14,9 +14,13 @@ render: function(){
 	  	}, this);
 	},
 addTodo:function(e){
-	
-	var new_todo = new Todo({caption:this.$('addtodo').val(), completed:false})
+	var enterkey= 13;
+	if( e.which !== enterkey){
+		return;
+	}
+	var new_todo = new Todo({caption:this.$('#addtodo').val(), completed:false})
 	this.collection.add(new_todo);
+	this.render();
 }
 
 });

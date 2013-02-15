@@ -29,15 +29,15 @@ describe ("Todo List View", function(){
 	 });
 	 it("Should have a function to add new todos to todo list ", function(){ 
 	 	todo_list_view.$('#addtodo').val('create new todo list item');
-	 	todo_list_view.addTodo()
+	 	todo_list_view.addTodo($.Event('keypress', {which:13}));
 	 	expect(todo_list.at(0)).toBeDefined()
 	 	
 	 });
-	 it("should create a new todo when you hit enter in the new todo inout box", function(){
+	 it("should create a new todo when you hit enter in the new todo inout box, and display it", function(){
 	 	todo_list_view.$('#addtodo').val('create new todo list item');
-	 	todo_list_view.$('#addtodo').keypress();
+	 	todo_list_view.$('#addtodo').trigger($.Event('keypress', {which:13}));
 	 	expect(todo_list.at(0)).toBeDefined()
-	 	
+	 	expect(todo_list_view.$el.html()).toContain('create new todo');
 	 
 	  });
 });
