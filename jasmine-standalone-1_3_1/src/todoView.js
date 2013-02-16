@@ -6,7 +6,8 @@ var TodoView = Backbone.View.extend({
 		
 	},
 	events: {
-		"change input": "toggleCheckbox"
+		"change input": "toggleCheckbox",
+		"keypress .editbox":"changeCaption"
 	},
 	template:_.template($('#item-template').html()),
 	
@@ -24,7 +25,11 @@ var TodoView = Backbone.View.extend({
 			this.model.set('completed', false);
 		}
 	},
-	changeCaption: function(){
+	changeCaption: function(e){
+		var enterkey= 13;
+	if( e.which !== enterkey){
+		return;
+	}
 		this.model.set('caption', this.$('.editbox').val());
 	}
 	

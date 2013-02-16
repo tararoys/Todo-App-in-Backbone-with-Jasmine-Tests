@@ -83,11 +83,16 @@ describe ("A todo item view", function(){
 	 	});
 	 	it("should have a function to change the caption", function(){ 
 	 		todo_view.$(".editbox").val('caption has been changed');
-	 		todo_view.changeCaption();
+	 		todo_view.changeCaption($.Event('keypress', {which:13}));
 	 		expect(todo_view.$('label').html()).toBe('caption has been changed');
 	 	
 	 	});
-	 	
+	 	it("should change the caption when enter is pressed in the edit box ", function(){ 
+	 			todo_view.$(".editbox").val('caption has been changed');
+	 			todo_view.$('.editbox').trigger($.Event('keypress', {which:13}));
+	 			expect(todo_view.$('label').html()).toBe('caption has been changed');
+	 			
+	 	});
 	
 	
 });
