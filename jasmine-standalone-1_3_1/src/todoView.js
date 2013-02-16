@@ -23,7 +23,9 @@ var TodoView = Backbone.View.extend({
 		else{
 			this.model.set('completed', false);
 		}
-		//this.render();
+	},
+	changeCaption: function(){
+		this.model.set('caption', this.$('.editbox').val());
 	}
 	
 

@@ -81,6 +81,13 @@ describe ("A todo item view", function(){
 	 		expect(todo_view.template).toBeDefined();
 	 		expect(todo_view.$el.html()).not.toBeEmpty();
 	 	});
+	 	it("should have a function to change the caption", function(){ 
+	 		todo_view.$(".editbox").val('caption has been changed');
+	 		todo_view.changeCaption();
+	 		expect(todo_view.$('label').html()).toBe('caption has been changed');
+	 	
+	 	});
+	 	
 	
 	
 });
