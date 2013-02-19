@@ -110,6 +110,23 @@ describe ("A todo item view", function(){
 	 		$('.fixture').remove();
 	 		
 	 	 });
+	 	 describe ("it should be able to delete itself", function(){
+	 		 it("should be able to destroy the todo model item it is associated with", function(){
+	 	 		todo_view.clear();
+	 	 		expect(this.model).not.toBeDefined();
+	 		  });
+	 		  
+	 		  it("should remove itself from the dom ", function(){ 
+	 		    $('body').append( todo_view.$el );
+	 		  	todo_view.clear();
+	 		  	var parent_exists = todo_view.$el.parent().length;
+	 		  		if(parent_exists === 0){
+	 		  				parent_exists = false;
+	 		  			}
+	 		  	expect(parent_exists).toEqual(false);
+	 		  });
+	 		 
+	 	});
 	
 	
 });

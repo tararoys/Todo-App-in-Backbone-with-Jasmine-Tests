@@ -3,6 +3,7 @@ var TodoView = Backbone.View.extend({
 	initialize: function(){
 		this.render();
 		this.model.on('change', this.render, this);
+		this.model.on('destroy', this.remove, this);
 		
 	},
 	events: {
@@ -36,6 +37,10 @@ var TodoView = Backbone.View.extend({
 	edit: function(){
 		this.$('.editbox').focus();
 		
+	},
+	clear: function(){
+		this.model.destroy();
+	
 	}
 	
 
