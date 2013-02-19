@@ -9,7 +9,8 @@ var TodoView = Backbone.View.extend({
 	events: {
 		"change input": "toggleCheckbox",
 		"keypress .editbox":"changeCaption",
-		"dblclick label":"edit"
+		"dblclick label":"edit",
+		"click .delete": "clear"
 	},
 	template:_.template($('#item-template').html()),
 	
@@ -39,6 +40,7 @@ var TodoView = Backbone.View.extend({
 		
 	},
 	clear: function(){
+		alert("hi");
 		this.model.destroy();
 	
 	}
