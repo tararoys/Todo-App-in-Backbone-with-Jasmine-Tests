@@ -6,6 +6,8 @@ describe ("A todo item view", function(){
 		my_model = new Todo({caption:"checkbox is not checked",
 	 		completed:false});
 		todo_view = new TodoView({model:my_model});
+		//$('.fixture').remove();
+		
 	});
 	
 	it("should have a view constructor assigned ", function(){ 
@@ -93,6 +95,21 @@ describe ("A todo item view", function(){
 	 			expect(todo_view.$('label').html()).toBe('caption has been changed');
 	 			
 	 	});
+	 	it("should focus on the input box when the edit function is called", function(){ 
+	 		todo_view.$el.addClass("fixture");
+	 		$('body').append( todo_view.$el );
+	 		todo_view.edit();
+	 		expect(document.activeElement).toBe('.editbox');
+	 		$('.fixture').remove();
+	 	});
+	 	it("should focus on the input box when the caption is double clicked ", function(){
+	 		todo_view.$el.addClass("fixture");
+	 		$('body').append( todo_view.$el );
+	 		todo_view.$('label').dblclick();
+	 		expect(document.activeElement).toBe('.editbox');
+	 		$('.fixture').remove();
+	 		
+	 	 });
 	
 	
 });

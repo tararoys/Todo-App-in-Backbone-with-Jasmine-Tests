@@ -7,7 +7,8 @@ var TodoView = Backbone.View.extend({
 	},
 	events: {
 		"change input": "toggleCheckbox",
-		"keypress .editbox":"changeCaption"
+		"keypress .editbox":"changeCaption",
+		"dblclick label":"edit"
 	},
 	template:_.template($('#item-template').html()),
 	
@@ -31,6 +32,10 @@ var TodoView = Backbone.View.extend({
 		return;
 	}
 		this.model.set('caption', this.$('.editbox').val());
+	},
+	edit: function(){
+		this.$('.editbox').focus();
+		
 	}
 	
 
