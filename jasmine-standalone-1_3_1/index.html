@@ -1,0 +1,30 @@
+<html>
+<head>
+ <!-- include source files here... -->
+  <script type="text/javascript" src="src/lib/jquery-1.9.1.min.js"></script>
+  
+<script type="text/template" id="item-template">
+      <input type="checkbox" <%= completed ? 'checked' : '' %>>
+      <label><%= caption %></label>
+      <input type='text' class='editbox' value= '<%- caption %>'>
+      <input type='button' class='delete' value='delete'>
+  </script>
+
+
+  <script type="text/javascript" src="src/lib/underscore.js"></script>
+  <script type="text/javascript" src="src/lib/backbone.js"></script>
+  <script type="text/javascript" src="src/lib/backbone.localStorage.js"></script>
+  <script type="text/javascript" src="src/todo.js"></script>
+  <script type="text/javascript" src="src/todoList.js"></script>
+  <script type="text/javascript" src="src/todoView.js"></script>
+  <script type="text/javascript" src="src/todoListView.js"></script>
+  
+  <script type="text/javascript" src="src/init.js"></script>
+    
+    
+ 
+</head>
+<body>
+<div id="my_todo_list"></div>
+</body>
+</html>
