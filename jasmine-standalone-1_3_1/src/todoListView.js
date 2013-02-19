@@ -22,6 +22,7 @@ addTodo:function(e){
 	}
 	var new_todo = new Todo({caption:this.$('#addtodo').val(), completed:false})
 	this.collection.add(new_todo);
+	
 }
 
 });

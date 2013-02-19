@@ -40,7 +40,6 @@ var TodoView = Backbone.View.extend({
 		
 	},
 	clear: function(){
-		alert("hi");
 		this.model.destroy();
 	
 	}

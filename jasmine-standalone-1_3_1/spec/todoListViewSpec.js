@@ -14,7 +14,7 @@ describe ("Todo List View", function(){
 		todo_list.add(todo1);
 		todo_list.add(todo2);
 		//create todo list view
-		todo_list_view.render();
+		//todo_list_view.render();
 		expect(todo_list_view.el.innerHTML).toContain('create new todo');
 		
 		//'<div> <input type="checkbox"> <label>create new todo</label> </div><div> <input type="checkbox" checked=""> <label>see if Todo List</label> </div>');
@@ -40,4 +40,15 @@ describe ("Todo List View", function(){
 	 	expect(todo_list_view.$el.html()).toContain('create new todo');
 	 
 	  });
+	 it("should remove item from collection and from element when item is deleted ", function(){ 
+	 		var todo1 = new Todo({caption: "create new todo", completed:false});
+	 		todo_list.add(todo1);
+	 		
+	 		expect(todo_list_view.el.innerHTML).toContain('create new todo');
+	 		expect(todo_list.at(0)).toBeDefined();
+	 		todo_list_view.$('.delete').click();//delete an item
+	 		
+	 		expect(todo_list_view.$el.html()).not.toContain('create new todo');
+	 		expect(todo_list.at(0)).not.toBeDefined();
+	 });
 });
