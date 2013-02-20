@@ -19,7 +19,7 @@
     <!-- index.html -->
 
   <script type="text/template" id="item-template">
-      <input type="checkbox" <%= completed ? 'checked' : '' %>>
+      <input type="checkbox" class='toggle' <%= completed ? 'checked' : '' %>>
       <label><%= caption %></label>
       <input type='text' class='editbox' value= '<%- caption %>'>
       <input type='button' class='delete' value='delete'>

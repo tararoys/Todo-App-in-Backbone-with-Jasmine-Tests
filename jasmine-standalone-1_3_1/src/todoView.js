@@ -7,9 +7,9 @@ var TodoView = Backbone.View.extend({
 		
 	},
 	events: {
-		"change input": "toggleCheckbox",
+		"change .toggle": "toggleCheckbox",
 		"keypress .editbox":"changeCaption",
-		"dblclick label":"edit",
+		"click label":"edit",
 		"click .delete": "clear"
 	},
 	template:_.template($('#item-template').html()),
