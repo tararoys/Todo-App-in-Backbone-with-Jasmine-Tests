@@ -82,11 +82,12 @@ describe ("Todo List View", function(){
 			var todo2 = new Todo({caption: "see if Todo List", completed:true});
 			todo_list.add(todo1);
 			todo_list.add(todo2);
-			todo_list_view.toggleOnlyShowCompleted();
+			todo_list_view.turnOnOnlyShowCompleted();
 			expect(todo_list_view.show_only_completed).toBeTruthy();
 			expect(todo_list_view.el.innerHTML).not.toContain('create new todo');
 	 	 
 	 	 });
+	 	
 	 	 
 });
 });

@@ -34,8 +34,8 @@ addTodo:function(e){
 	
 },
 show_only_completed:false,
-toggleOnlyShowCompleted:function(){
-	this.show_only_completed= !(this.show_only_completed);
+turnOnOnlyShowCompleted:function(){
+	this.show_only_completed= true;
 	this.render();
 },
 completedFilter:function(todo){
