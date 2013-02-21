@@ -61,5 +61,9 @@ describe ("Todo List View", function(){
 	 			var filteredTodo2 = todo_list_view.completedFilter(todo2);
 	 			expect(filteredTodo2).toBe(todo2);
 	 		});
+	 	it("has a flag for when we want todos to be filtered through completedFilter ", function(){ 
+	 			expect(todo_list_view.show_only_completed).toBeDefined();
+	 	
+	 	});
 });
 });

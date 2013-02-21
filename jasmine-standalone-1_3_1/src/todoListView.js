@@ -24,6 +24,7 @@ addTodo:function(e){
 	this.collection.add(new_todo);
 	
 },
+show_only_completed:true,
 completedFilter:function(todo){
 	if(todo.get('completed') === true){
 		return todo;
