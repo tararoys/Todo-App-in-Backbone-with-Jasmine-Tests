@@ -10,9 +10,18 @@ events:{
 render: function(){
 	  this.$el.html('<input type="text" id="addtodo" value="type in todo item here">');
 	  this.collection.each(function(todo){ 
-	  	var todo_view = new TodoView({model:todo});
-	  	todo_view.render();
-	  	this.$el.append(todo_view.$el);
+	  	var filtered_todo;
+	  	if(this.show_only_completed){
+	  		filtered_todo= this.completedFilter(todo);
+	  	}
+	  	else{
+	  		filtered_todo=todo;
+	  	}
+	  	if(!(filtered_todo === null)){
+	  		var todo_view = new TodoView({model:todo});
+	  		todo_view.render();
+	  		this.$el.append(todo_view.$el);
+	  	}
 	  }, this);
 	},
 addTodo:function(e){
@@ -24,7 +33,7 @@ addTodo:function(e){
 	this.collection.add(new_todo);
 	
 },
-show_only_completed:true,
+show_only_completed:false,
 completedFilter:function(todo){
 	if(todo.get('completed') === true){
 		return todo;

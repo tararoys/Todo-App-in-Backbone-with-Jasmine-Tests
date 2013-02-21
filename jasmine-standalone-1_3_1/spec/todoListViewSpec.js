@@ -63,7 +63,19 @@ describe ("Todo List View", function(){
 	 		});
 	 	it("has a flag for when we want todos to be filtered through completedFilter ", function(){ 
 	 			expect(todo_list_view.show_only_completed).toBeDefined();
+	 			expect(todo_list_view.show_only_completed).toBeFalsy();
 	 	
 	 	});
+	 	it("when only_show_compleyed flag is set, should dump every todo through completedFilter before rendering ", function(){
+	 			todo_list_view.show_only_completed=true;
+	 			var todo1 = new Todo({caption: "create new todo", completed:false});
+				var todo2 = new Todo({caption: "see if Todo List", completed:true});
+				todo_list.add(todo1);
+				todo_list.add(todo2);
+				expect(todo_list_view.el.innerHTML).not.toContain('create new todo');
+	 			
+	 	
+	 	 });
+	 	 
 });
 });
