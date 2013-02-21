@@ -102,7 +102,7 @@ describe ("A todo item view", function(){
 	 		expect(document.activeElement).toBe('.editbox');
 	 		$('.fixture').remove();
 	 	});
-	 	it("should focus on the input box when the caption is  clicked ", function(){
+	 	it("should focus on the input box when the caption is clicked ", function(){
 	 		todo_view.$el.addClass("fixture");
 	 		$('body').append( todo_view.$el );
 	 		todo_view.$('label').click();

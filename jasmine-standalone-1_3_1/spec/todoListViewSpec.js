@@ -52,6 +52,14 @@ describe ("Todo List View", function(){
 	 		expect(todo_list.at(0)).not.toBeDefined();
 	 });
 	 describe ("A way to show only the completed items in the list", function(){
-	 	it(" ", function(){ });
+	 	it("has a function called completedFilter that takes in todo items and returns them only if they afe completed, and returns null if they are not. ", function(){ 
+	 			var todo1 = new Todo({caption: "create new todo", completed:false});
+	 			var filteredTodo1 = todo_list_view.completedFilter(todo1);
+	 			expect(filteredTodo1).toBe(null);
+	 			
+	 			var todo2 = new Todo({caption: "create new todo", completed:true});
+	 			var filteredTodo2 = todo_list_view.completedFilter(todo2);
+	 			expect(filteredTodo2).toBe(todo2);
+	 		});
 });
 });
