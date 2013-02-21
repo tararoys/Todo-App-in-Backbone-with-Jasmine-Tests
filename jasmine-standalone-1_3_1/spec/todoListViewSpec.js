@@ -66,7 +66,7 @@ describe ("Todo List View", function(){
 	 			expect(todo_list_view.show_only_completed).toBeFalsy();
 	 	
 	 	});
-	 	it("when only_show_compleyed flag is set, should dump every todo through completedFilter before rendering ", function(){
+	 	it("when only_show_completed flag is set, should dump every todo through completedFilter before rendering ", function(){
 	 			todo_list_view.show_only_completed=true;
 	 			var todo1 = new Todo({caption: "create new todo", completed:false});
 				var todo2 = new Todo({caption: "see if Todo List", completed:true});
@@ -75,6 +75,17 @@ describe ("Todo List View", function(){
 				expect(todo_list_view.el.innerHTML).not.toContain('create new todo');
 	 			
 	 	
+	 	 });
+	 	 it("function that toggles the only_show_completed flag and rerender", function(){ 
+	 	 	
+	 	 	var todo1 = new Todo({caption: "create new todo", completed:false});
+			var todo2 = new Todo({caption: "see if Todo List", completed:true});
+			todo_list.add(todo1);
+			todo_list.add(todo2);
+			todo_list_view.toggleOnlyShowCompleted();
+			expect(todo_list_view.show_only_completed).toBeTruthy();
+			expect(todo_list_view.el.innerHTML).not.toContain('create new todo');
+	 	 
 	 	 });
 	 	 
 });

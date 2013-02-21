@@ -34,6 +34,10 @@ addTodo:function(e){
 	
 },
 show_only_completed:false,
+toggleOnlyShowCompleted:function(){
+	this.show_only_completed= !(this.show_only_completed);
+	this.render();
+},
 completedFilter:function(todo){
 	if(todo.get('completed') === true){
 		return todo;
