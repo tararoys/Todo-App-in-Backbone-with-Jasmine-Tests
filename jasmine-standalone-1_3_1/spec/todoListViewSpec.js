@@ -76,7 +76,7 @@ describe ("Todo List View", function(){
 	 			
 	 	
 	 	 });
-	 	 it("function that toggles the only_show_completed flag and rerender", function(){ 
+	 	 it("function that turns on the only_show_completed flag and rerenders", function(){ 
 	 	 	
 	 	 	var todo1 = new Todo({caption: "create new todo", completed:false});
 			var todo2 = new Todo({caption: "see if Todo List", completed:true});
@@ -85,9 +85,16 @@ describe ("Todo List View", function(){
 			todo_list_view.turnOnOnlyShowCompleted();
 			expect(todo_list_view.show_only_completed).toBeTruthy();
 			expect(todo_list_view.el.innerHTML).not.toContain('create new todo');
-	 	 
+	 	 	expect(todo_list_view.el.innerHTML).toContain('see if');
 	 	 });
-	 	
 	 	 
+	 	it("calls turnOnOnlyShowCompleted when you press completed link", function(){ 
+	 		
+	 		spyOn(todo_list_view, 'turnOnOnlyShowCompleted');
+	 		todo_list_view.delegateEvents();
+	 		todo_list_view.$('.show_completed').click();
+	 		expect(todo_list_view.turnOnOnlyShowCompleted).toHaveBeenCalled();
+	 	
+	 	});
 });
 });

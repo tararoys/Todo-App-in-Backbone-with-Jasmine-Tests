@@ -5,7 +5,8 @@ initialize: function(){
 	this.collection.on('add', this.render, this);
 },
 events:{
-	"keypress #addtodo":"addTodo"
+	"keypress #addtodo":"addTodo",
+	"click .show_completed":"turnOnOnlyShowCompleted"
 },
 render: function(){
 	  this.$el.html('<input type="text" id="addtodo" value="type in todo item here">');
@@ -23,6 +24,7 @@ render: function(){
 	  		this.$el.append(todo_view.$el);
 	  	}
 	  }, this);
+	  this.$el.append('<div><a class="show_completed">completed</a></div>');
 	},
 addTodo:function(e){
 	var enterkey= 13;
