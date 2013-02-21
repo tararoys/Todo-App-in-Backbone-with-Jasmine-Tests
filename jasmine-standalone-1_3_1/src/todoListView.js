@@ -8,7 +8,7 @@ events:{
 	"keypress #addtodo":"addTodo"
 },
 render: function(){
-	  this.$el.html('<input type="text" id="addtodo">');
+	  this.$el.html('<input type="text" id="addtodo" value="type in todo item here">');
 	  this.collection.each(function(todo){ 
 	  	var todo_view = new TodoView({model:todo});
 	  	todo_view.render();

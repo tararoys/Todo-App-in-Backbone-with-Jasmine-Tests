@@ -33,7 +33,7 @@ describe ("Todo List View", function(){
 	 	expect(todo_list.at(0)).toBeDefined()
 	 	
 	 });
-	 it("should create a new todo when you hit enter in the new todo inout box, and display it", function(){
+	 it("should create a new todo when you hit enter in the new todo input box, and display it", function(){
 	 	todo_list_view.$('#addtodo').val('create new todo list item');
 	 	todo_list_view.$('#addtodo').trigger($.Event('keypress', {which:13}));
 	 	expect(todo_list.at(0)).toBeDefined();
@@ -51,4 +51,7 @@ describe ("Todo List View", function(){
 	 		expect(todo_list_view.$el.html()).not.toContain('create new todo');
 	 		expect(todo_list.at(0)).not.toBeDefined();
 	 });
+	 describe ("A way to show only the completed items in the list", function(){
+	 	it(" ", function(){ });
+});
 });
