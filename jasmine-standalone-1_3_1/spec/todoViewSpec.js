@@ -65,15 +65,15 @@ describe ("A todo item view", function(){
 	  		todo_view.toggleCheckbox();
 	  		expect(my_model.get('completed')).toBe(true);
 	  		
-	  		expect(todo_view.$('input')).toBeChecked();
+	  		expect(todo_view.$('.toggle')).toBeChecked();
 	    
 	     });
 	    it("should have a click event that calls toggleCheckbox ", function(){ 
 	     	
-	  		todo_view.$('input').change(); 
+	  		todo_view.$('.toggle').change(); 
 	  		expect(my_model.get('completed')).toBe(true);
 	  		
-	  		expect(todo_view.$('input')).toBeChecked();
+	  		expect(todo_view.$('.toggle')).toBeChecked();
 	     });
 	     it("Should, by convention, return the view when the render functin is called ", function(){ 
 	 			expect(todo_view.render()).toBe(todo_view);
