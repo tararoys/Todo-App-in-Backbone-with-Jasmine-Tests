@@ -170,5 +170,10 @@ describe ("Todo List View", function(){
 	 	 	expect(todo_list_view.el.innerHTML).toContain('see if');
 	 	 });
 		
-});
+	});
+	it("should have have a className property ", function(){
+		expect(todo_list_view.className).toBe("todolist");
+	
+	});
+
 });

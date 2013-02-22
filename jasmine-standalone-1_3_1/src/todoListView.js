@@ -1,4 +1,5 @@
 var TodoListView = Backbone.View.extend({
+className: 'todolist',
 initialize: function(){
 	//_.bindAll(this);
 	this.render();
@@ -7,7 +8,8 @@ initialize: function(){
 events:{
 	"keypress #addtodo":"addTodo",
 	"click .show_completed":"turnOnOnlyShowCompleted",
-	"click .show_active":"turnOnOnlyShowActive"
+	"click .show_active":"turnOnOnlyShowActive",
+	"click .show_all" : "turnOnShowAll"
 },
 render: function(){
 	  this.$el.html('<input type="text" id="addtodo" value="type in todo item here">');
@@ -20,7 +22,7 @@ render: function(){
 	  		this.$el.append(todo_view.$el);
 	  	}
 	  }, this);
-	  this.$el.append('<div><a class="show_completed">completed</a><a class="show_active">active</a></div>');
+	  this.$el.append('<div><a class="show_completed">completed</a> <a class="show_active">active</a> <a class="show_all">all</a></div>');
 	},
 addTodo:function(e){
 	var enterkey= 13;
