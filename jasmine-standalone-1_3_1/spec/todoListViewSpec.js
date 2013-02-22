@@ -52,7 +52,7 @@ describe ("Todo List View", function(){
 	 		expect(todo_list.at(0)).not.toBeDefined();
 	 });
 	 describe ("A way to show only the completed items in the list", function(){
-	 	it("has a function called completedFilter that takes in todo items and returns them only if they afe completed, and returns null if they are not. ", function(){ 
+	 	it("has a function called completedFilter that takes in todo items and returns them only if they are completed, and returns null if they are not. ", function(){ 
 	 			var todo1 = new Todo({caption: "create new todo", completed:false});
 	 			var filteredTodo1 = todo_list_view.completedFilter(todo1);
 	 			expect(filteredTodo1).toBe(null);
@@ -62,8 +62,9 @@ describe ("Todo List View", function(){
 	 			expect(filteredTodo2).toBe(todo2);
 	 		});
 	 	it("has a flag for when we want todos to be filtered through completedFilter ", function(){ 
-	 			expect(todo_list_view.show_only_completed).toBeDefined();
-	 			expect(todo_list_view.show_only_completed).toBeFalsy();
+	 			expect(todo_list_view.filter).toBeDefined();
+	 			todo_list_view.filter="show_only_completed";
+	 			expect(todo_list_view.filter).toBe("show_only_completed");
 	 	
 	 	});
 	 	it("when only_show_completed flag is set, should dump every todo through completedFilter before rendering ", function(){
@@ -96,5 +97,19 @@ describe ("Todo List View", function(){
 	 		expect(todo_list_view.turnOnOnlyShowCompleted).toHaveBeenCalled();
 	 	
 	 	});
-});
+	 	
+	});
+	describe ("A way to show only active items in a list", function(){
+		it("has a function called activeFilter that takes in todo items and returns them only if they are active, and returns null if they are not. ", function(){ 
+	 			var todo1 = new Todo({caption: "create new todo", completed:false});
+	 			var filteredTodo1 = todo_list_view.activeFilter(todo1);
+	 			expect(filteredTodo1).toBe(null);
+	 			
+	 			var todo2 = new Todo({caption: "create new todo", completed:true});
+	 			var filteredTodo2 = todo_list_view.activeFilter(todo2);
+	 			expect(filteredTodo2).toBe(todo2);
+	 		});
+		
+	 	
+	});
 });

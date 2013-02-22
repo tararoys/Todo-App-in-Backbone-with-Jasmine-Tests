@@ -12,7 +12,7 @@ render: function(){
 	  this.$el.html('<input type="text" id="addtodo" value="type in todo item here">');
 	  this.collection.each(function(todo){ 
 	  	var filtered_todo;
-	  	if(this.show_only_completed){
+	  	if(this.filter==="show_only_completed"){
 	  		filtered_todo= this.completedFilter(todo);
 	  	}
 	  	else{
@@ -35,9 +35,9 @@ addTodo:function(e){
 	this.collection.add(new_todo);
 	
 },
-show_only_completed:false,
+filter: "show_all",
 turnOnOnlyShowCompleted:function(){
-	this.show_only_completed= true;
+	this.filter= "show_only_completed";
 	this.render();
 },
 completedFilter:function(todo){
@@ -47,6 +47,6 @@ completedFilter:function(todo){
 	else{
 		return null;
 	}
-}
+},
 
 });
