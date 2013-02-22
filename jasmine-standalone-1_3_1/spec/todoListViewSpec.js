@@ -133,7 +133,15 @@ describe ("Todo List View", function(){
 			expect(todo_list_view.el.innerHTML).toContain('create new todo');
 	 	 	expect(todo_list_view.el.innerHTML).not.toContain('see if');
 	 	 });
+	 	 
+	 	it("calls turnOnOnlyShowActive when you press actived link", function(){ 
+	 		
+	 		spyOn(todo_list_view, 'turnOnOnlyShowActive');
+	 		todo_list_view.delegateEvents();
+	 		todo_list_view.$('.show_active').click();
+	 		expect(todo_list_view.turnOnOnlyShowActive).toHaveBeenCalled();
 	 	
+	 	});
 		
 	 	
 	});

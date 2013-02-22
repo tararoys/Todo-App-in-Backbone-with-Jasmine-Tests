@@ -6,7 +6,8 @@ initialize: function(){
 },
 events:{
 	"keypress #addtodo":"addTodo",
-	"click .show_completed":"turnOnOnlyShowCompleted"
+	"click .show_completed":"turnOnOnlyShowCompleted",
+	"click .show_active":"turnOnOnlyShowActive"
 },
 render: function(){
 	  this.$el.html('<input type="text" id="addtodo" value="type in todo item here">');
@@ -19,7 +20,7 @@ render: function(){
 	  		this.$el.append(todo_view.$el);
 	  	}
 	  }, this);
-	  this.$el.append('<div><a class="show_completed">completed</a></div>');
+	  this.$el.append('<div><a class="show_completed">completed</a><a class="show_active">active</a></div>');
 	},
 addTodo:function(e){
 	var enterkey= 13;
