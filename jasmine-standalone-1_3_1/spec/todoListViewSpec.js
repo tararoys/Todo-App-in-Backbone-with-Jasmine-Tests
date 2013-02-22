@@ -122,6 +122,17 @@ describe ("Todo List View", function(){
 				todo_list.add(todo2);
 				expect(todo_list_view.el.innerHTML).not.toContain('see if Todo List');
 			});
+			it("function that turns on the only_show_active flag and rerenders", function(){ 
+	 	 	
+	 	 	var todo1 = new Todo({caption: "create new todo", completed:false});
+			var todo2 = new Todo({caption: "see if Todo List", completed:true});
+			todo_list.add(todo1);
+			todo_list.add(todo2);
+			todo_list_view.turnOnOnlyShowActive();
+			expect(todo_list_view.filter_name).toBe("show_only_active");
+			expect(todo_list_view.el.innerHTML).toContain('create new todo');
+	 	 	expect(todo_list_view.el.innerHTML).not.toContain('see if');
+	 	 });
 	 	
 		
 	 	

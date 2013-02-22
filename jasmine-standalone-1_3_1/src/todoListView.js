@@ -46,6 +46,10 @@ turnOnOnlyShowCompleted:function(){
 	this.filter_name= "show_only_completed";
 	this.render();
 },
+turnOnOnlyShowActive:function(){
+	this.filter_name= "show_only_active";
+	this.render();
+},
 completedFilter:function(todo){
 	if(todo.get('completed') === true){
 		return todo;
