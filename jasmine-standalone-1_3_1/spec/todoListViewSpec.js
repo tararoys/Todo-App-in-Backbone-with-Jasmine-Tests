@@ -109,6 +109,12 @@ describe ("Todo List View", function(){
 	 			var filteredTodo2 = todo_list_view.activeFilter(todo2);
 	 			expect(filteredTodo2).toBe(null);
 	 		});
+	 		it("has a flag for when we want todos to be filtered through activeFilter ", function(){ 
+	 			expect(todo_list_view.filter_name).toBeDefined();
+	 			todo_list_view.filter_name="show_only_active";
+	 			expect(todo_list_view.filter_name).toBe("show_only_active");
+	 	
+	 	});
 		
 	 	
 	});
