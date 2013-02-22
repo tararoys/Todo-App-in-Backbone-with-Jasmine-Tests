@@ -103,11 +103,11 @@ describe ("Todo List View", function(){
 		it("has a function called activeFilter that takes in todo items and returns them only if they are active, and returns null if they are not. ", function(){ 
 	 			var todo1 = new Todo({caption: "create new todo", completed:false});
 	 			var filteredTodo1 = todo_list_view.activeFilter(todo1);
-	 			expect(filteredTodo1).toBe(null);
+	 			expect(filteredTodo1).toBe(todo1);
 	 			
 	 			var todo2 = new Todo({caption: "create new todo", completed:true});
 	 			var filteredTodo2 = todo_list_view.activeFilter(todo2);
-	 			expect(filteredTodo2).toBe(todo2);
+	 			expect(filteredTodo2).toBe(null);
 	 		});
 		
 	 	

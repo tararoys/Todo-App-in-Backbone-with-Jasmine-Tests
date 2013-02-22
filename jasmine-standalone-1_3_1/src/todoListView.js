@@ -51,5 +51,13 @@ completedFilter:function(todo){
 		return null;
 	}
 },
+activeFilter:function(todo){
+	if(todo.get('completed') === false){
+		return todo;
+	}
+	else{
+		return null;
+	}
+},
 
 });
