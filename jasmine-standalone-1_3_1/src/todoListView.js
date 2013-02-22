@@ -11,13 +11,8 @@ events:{
 render: function(){
 	  this.$el.html('<input type="text" id="addtodo" value="type in todo item here">');
 	  this.collection.each(function(todo){ 
-	  	var filtered_todo;
-	  	if(this.filter==="show_only_completed"){
-	  		filtered_todo= this.completedFilter(todo);
-	  	}
-	  	else{
-	  		filtered_todo=todo;
-	  	}
+	  	var filtered_todo=this.filter(todo);
+	  	
 	  	if(!(filtered_todo === null)){
 	  		var todo_view = new TodoView({model:todo});
 	  		todo_view.render();
@@ -35,9 +30,17 @@ addTodo:function(e){
 	this.collection.add(new_todo);
 	
 },
-filter: "show_all",
+filter: function(todo){
+	if(this.filter_name==="show_only_completed"){
+	  		return this.completedFilter(todo);
+	  	}
+	  	else{
+	  		return todo;
+	  	}
+},
+filter_name: "show_all",
 turnOnOnlyShowCompleted:function(){
-	this.filter= "show_only_completed";
+	this.filter_name= "show_only_completed";
 	this.render();
 },
 completedFilter:function(todo){
