@@ -34,7 +34,10 @@ filter: function(todo){
 	if(this.filter_name==="show_only_completed"){
 	  		return this.completedFilter(todo);
 	  	}
-	  	else{
+	 else if(this.filter_name==="show_only_active"){
+	  		return this.activeFilter(todo);
+	  	}
+	  else{
 	  		return todo;
 	  	}
 },

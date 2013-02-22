@@ -113,8 +113,16 @@ describe ("Todo List View", function(){
 	 			expect(todo_list_view.filter_name).toBeDefined();
 	 			todo_list_view.filter_name="show_only_active";
 	 			expect(todo_list_view.filter_name).toBe("show_only_active");
+	 		});
+	 		it("when only_show_completed flag is set, should dump every todo through completedFilter before rendering ", function(){
+	 			todo_list_view.filter_name="show_only_active";
+	 			var todo1 = new Todo({caption: "create new todo", completed:false});
+				var todo2 = new Todo({caption: "see if Todo List", completed:true});
+				todo_list.add(todo1);
+				todo_list.add(todo2);
+				expect(todo_list_view.el.innerHTML).not.toContain('see if Todo List');
+			});
 	 	
-	 	});
 		
 	 	
 	});
