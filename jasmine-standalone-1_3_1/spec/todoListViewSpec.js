@@ -142,7 +142,12 @@ describe ("Todo List View", function(){
 	 		expect(todo_list_view.turnOnOnlyShowActive).toHaveBeenCalled();
 	 	
 	 	});
-		
-	 	
 	});
+	describe ("A way to show all the the todos", function(){
+		it("has a flag for when we want todos to be filtered through activeFilter ", function(){ 
+	 			expect(todo_list_view.filter_name).toBeDefined();
+	 			todo_list_view.filter_name="show_all";
+	 			expect(todo_list_view.filter_name).toBe("show_all");
+	 		});
+});
 });
