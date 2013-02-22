@@ -68,7 +68,7 @@ describe ("Todo List View", function(){
 	 	
 	 	});
 	 	it("when only_show_completed flag is set, should dump every todo through completedFilter before rendering ", function(){
-	 			todo_list_view.show_only_completed=true;
+	 			todo_list_view.filter="show_only_completed";
 	 			var todo1 = new Todo({caption: "create new todo", completed:false});
 				var todo2 = new Todo({caption: "see if Todo List", completed:true});
 				todo_list.add(todo1);
@@ -84,7 +84,7 @@ describe ("Todo List View", function(){
 			todo_list.add(todo1);
 			todo_list.add(todo2);
 			todo_list_view.turnOnOnlyShowCompleted();
-			expect(todo_list_view.show_only_completed).toBeTruthy();
+			expect(todo_list_view.filter).toBe("show_only_completed");
 			expect(todo_list_view.el.innerHTML).not.toContain('create new todo');
 	 	 	expect(todo_list_view.el.innerHTML).toContain('see if');
 	 	 });
