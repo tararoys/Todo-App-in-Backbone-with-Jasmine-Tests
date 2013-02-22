@@ -38,7 +38,7 @@ filter: function(todo){
 	 else if(this.filter_name==="show_only_active"){
 	  		return this.activeFilter(todo);
 	  	}
-	  else{
+	  else if(this.filter_name==="show_all"){
 	  		return todo;
 	  	}
 },

@@ -149,5 +149,14 @@ describe ("Todo List View", function(){
 	 			todo_list_view.filter_name="show_all";
 	 			expect(todo_list_view.filter_name).toBe("show_all");
 	 		});
+	 	it("when show_all flag is set, should dump every todo through completedFilter before rendering ", function(){
+	 			todo_list_view.filter_name="show_all";
+	 			var todo1 = new Todo({caption: "create new todo", completed:false});
+				var todo2 = new Todo({caption: "see if Todo List", completed:true});
+				todo_list.add(todo1);
+				todo_list.add(todo2);
+				expect(todo_list_view.el.innerHTML).toContain('see if Todo List');
+				expect(todo_list_view.el.innerHTML).toContain('create new todo');
+		});
 });
 });
