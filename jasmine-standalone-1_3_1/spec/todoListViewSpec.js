@@ -158,5 +158,17 @@ describe ("Todo List View", function(){
 				expect(todo_list_view.el.innerHTML).toContain('see if Todo List');
 				expect(todo_list_view.el.innerHTML).toContain('create new todo');
 		});
+		it("function that turns on the show_all flag and rerenders", function(){ 
+	 	 	
+	 	 	var todo1 = new Todo({caption: "create new todo", completed:false});
+			var todo2 = new Todo({caption: "see if Todo List", completed:true});
+			todo_list.add(todo1);
+			todo_list.add(todo2);
+			todo_list_view.turnOnShowAll();
+			expect(todo_list_view.filter_name).toBe("show_all");
+			expect(todo_list_view.el.innerHTML).toContain('create new todo');
+	 	 	expect(todo_list_view.el.innerHTML).toContain('see if');
+	 	 });
+		
 });
 });

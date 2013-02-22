@@ -51,6 +51,10 @@ turnOnOnlyShowActive:function(){
 	this.filter_name= "show_only_active";
 	this.render();
 },
+turnOnShowAll:function(){
+	this.filter_name= "show_all";
+	this.render();
+},
 completedFilter:function(todo){
 	if(todo.get('completed') === true){
 		return todo;
