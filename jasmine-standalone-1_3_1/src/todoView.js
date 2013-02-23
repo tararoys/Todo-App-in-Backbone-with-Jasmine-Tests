@@ -9,7 +9,8 @@ var TodoView = Backbone.View.extend({
 	},
 	events: {
 		"change .toggle": "toggleCheckbox",
-		"keypress .editbox":"changeCaption",
+		"keypress .editbox":"changeCaptionOnEnter",
+		"blur .editbox":"changeCaption",
 		"click label":"edit",
 		"click .delete": "clear"
 	},
@@ -29,11 +30,17 @@ var TodoView = Backbone.View.extend({
 			this.model.set('completed', false);
 		}
 	},
-	changeCaption: function(e){
+	changeCaptionOnEnter: function(e){
 		var enterkey= 13;
-	if( e.which !== enterkey){
-		return;
-	}
+		
+		if( e.which !== enterkey){
+			return;
+		}
+		this.changeCaption();
+	
+	},
+	changeCaption: function(){
+		
 		this.model.set('caption', this.$('.editbox').val());
 		this.$el.removeClass('editing');
 	},

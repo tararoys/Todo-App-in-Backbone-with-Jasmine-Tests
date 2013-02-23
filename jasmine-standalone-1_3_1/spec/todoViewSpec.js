@@ -91,11 +91,14 @@ describe ("A todo item view", function(){
 	 		expect(todo_view.$('label').html()).toBe('caption has been changed');
 	 	
 	 	});
-	 	it("should change the caption when enter is pressed in the edit box ", function(){ 
+	 	it("should change the caption when enter is pressed in the edit box or when the mouse is clicked outside the editbox", function(){ 
 	 			todo_view.$(".editbox").val('caption has been changed');
 	 			todo_view.$('.editbox').trigger($.Event('keypress', {which:13}));
 	 			expect(todo_view.$('label').html()).toBe('caption has been changed');
 	 			
+	 			todo_view.$(".editbox").val('caption has been changed again');
+	 			todo_view.$('.editbox').trigger($.Event('blur'));
+	 			expect(todo_view.$('label').html()).toBe('caption has been changed again');
 	 	});
 	 	it("should focus on the input box when the edit function is called", function(){ 
 	 		todo_view.$el.addClass("fixture");
