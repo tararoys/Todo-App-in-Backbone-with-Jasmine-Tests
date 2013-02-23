@@ -1,6 +1,12 @@
 #my_todo_list{
 	background-color: blue;
+	margin: auto;
+	width:400px;
 }
 .todoitem{
 	background-color: red;
+}
+
+#data_filters{
+	text-align:center;
 }
