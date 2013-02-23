@@ -83,9 +83,11 @@ describe ("A todo item view", function(){
 	 		expect(todo_view.template).toBeDefined();
 	 		expect(todo_view.$el.html()).not.toBeEmpty();
 	 	});
-	 	it("should have a function to change the caption", function(){ 
+	 	it("should have a function to change the caption and delete editing flag", function(){ 
 	 		todo_view.$(".editbox").val('caption has been changed');
+	 		todo_view.$el.addClass('editing');
 	 		todo_view.changeCaption($.Event('keypress', {which:13}));
+	 		expect(todo_view.$el).not.toHaveClass('editing');
 	 		expect(todo_view.$('label').html()).toBe('caption has been changed');
 	 	
 	 	});
@@ -101,6 +103,14 @@ describe ("A todo item view", function(){
 	 		todo_view.edit();
 	 		expect(document.activeElement).toBe('.editbox');
 	 		$('.fixture').remove();
+	 	});
+	 	it("should flag the todo as being edited when the edit function is called ", function(){ 
+	 		todo_view.$el.addClass("fixture");
+	 		$('body').append( todo_view.$el );
+	 		todo_view.edit();
+	 		expect(todo_view.$el).toHaveClass("editing");
+	 		$('.fixture').remove();
+	 	
 	 	});
 	 	it("should focus on the input box when the caption is clicked ", function(){
 	 		todo_view.$el.addClass("fixture");

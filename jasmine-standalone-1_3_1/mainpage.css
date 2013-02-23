@@ -12,10 +12,17 @@
 }
 
 .editbox{
-	visibility:hidden;
+	display: none
 }
 
-.editbox :focus{
+.editing .editbox{
 	background-color: yellow;
-	visibility: visible;
+	display: inline;
 }
+
+.editing label{
+	display: none;
+}
+
+
+

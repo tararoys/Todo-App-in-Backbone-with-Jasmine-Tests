@@ -35,9 +35,12 @@ var TodoView = Backbone.View.extend({
 		return;
 	}
 		this.model.set('caption', this.$('.editbox').val());
+		this.$el.removeClass('editing');
 	},
 	edit: function(){
+		this.$el.addClass('editing');
 		this.$('.editbox').focus();
+		
 		
 	},
 	clear: function(){
