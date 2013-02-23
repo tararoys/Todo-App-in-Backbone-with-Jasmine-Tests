@@ -23,6 +23,9 @@
 .editing label{
 	display: none;
 }
+.delete {
+	float: right;
+}
 
 
 
