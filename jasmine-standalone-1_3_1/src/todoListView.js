@@ -22,7 +22,7 @@ render: function(){
 	  		this.$el.append(todo_view.$el);
 	  	}
 	  }, this);
-	  this.$el.append('<div id="data_filters"><a class="show_completed">completed</a> <a class="show_active">active</a> <a class="show_all">all</a></div>');
+	  this.$el.append('<div id="data_filters"><button class="show_completed">completed</button> <button class="show_active">active</button> <button class="show_all">all</button></div>');
 	},
 addTodo:function(e){
 	var enterkey= 13;

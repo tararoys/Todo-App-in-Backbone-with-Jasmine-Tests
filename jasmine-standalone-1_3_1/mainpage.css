@@ -10,3 +10,12 @@
 #data_filters{
 	text-align:center;
 }
+
+.editbox{
+	visibility:hidden;
+}
+
+.editbox :focus{
+	background-color: yellow;
+	visibility: visible;
+}
