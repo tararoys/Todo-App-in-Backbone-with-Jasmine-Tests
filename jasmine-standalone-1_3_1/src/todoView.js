@@ -1,4 +1,5 @@
 var TodoView = Backbone.View.extend({
+	className:"todoitem",
 
 	initialize: function(){
 		this.render();
