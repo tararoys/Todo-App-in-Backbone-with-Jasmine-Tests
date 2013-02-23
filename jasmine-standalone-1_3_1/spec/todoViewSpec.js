@@ -86,7 +86,7 @@ describe ("A todo item view", function(){
 	 	it("should have a function to change the caption and delete editing flag", function(){ 
 	 		todo_view.$(".editbox").val('caption has been changed');
 	 		todo_view.$el.addClass('editing');
-	 		todo_view.changeCaption($.Event('keypress', {which:13}));
+	 		todo_view.changeCaptionOnEnter($.Event('keypress', {which:13}));
 	 		expect(todo_view.$el).not.toHaveClass('editing');
 	 		expect(todo_view.$('label').html()).toBe('caption has been changed');
 	 	
